@@ -13,4 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-
+/**
+ * Tags
+ */
+Route::resource('tags', 'TagController', ['except' => ['create', 'edit']]);
+Route::resource('posts', 'Postcontroller', ['only' => ['index', 'show']]);
