@@ -17,4 +17,9 @@ use Illuminate\Http\Request;
  * Tags
  */
 Route::resource('tags', 'TagController', ['except' => ['create', 'edit']]);
-Route::resource('posts', 'Postcontroller', ['only' => ['index', 'show']]);
+Route::resource('posts', 'PostController', ['only' => ['index', 'show']]);
+Route::resource('users.posts', 'UserPostController', ['except' => ['create', 'show', 'edit']]);
+Route::resource('tags.users', 'TagUserController', ['only' => ['index']]);
+Route::resource('users.tags', 'UserTagController', ['only' => ['index']]);
+Route::resource('tags.posts', 'TagPostController', ['only' => ['index']]);
+Route::resource('posts.tags', 'PostTagController', ['only' => ['index', 'update', 'destroy']]);
